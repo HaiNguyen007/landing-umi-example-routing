@@ -3,14 +3,9 @@
 import React from 'react';
 import { enquireScreen } from 'enquire-js';
 
-import Content0 from './Content0';
-import Content7 from './Content7';
+import Content13 from './Content13';
 
-import {
-  Content00DataSource,
-  Content70DataSource,
-} from './data.source.js';
-
+import { Content130DataSource } from './data.source';
 import './less/antMotionStyle.less';
 
 let isMobile;
@@ -18,7 +13,7 @@ enquireScreen((b) => {
   isMobile = b;
 });
 
-const location = window.location;
+const { location = {} } = typeof window !== 'undefined' ? window : {};
 
 export default class Page2 extends React.Component {
   constructor(props) {
@@ -49,16 +44,10 @@ export default class Page2 extends React.Component {
 
   render() {
     const children = [
-      <Content0
-        id="Content0_0"
-        key="Content0_0"
-        dataSource={Content00DataSource}
-        isMobile={this.state.isMobile}
-      />,
-      <Content7
-        id="Content7_0"
-        key="Content7_0"
-        dataSource={Content70DataSource}
+      <Content13
+        id="Content13_0"
+        key="Content13_0"
+        dataSource={Content130DataSource}
         isMobile={this.state.isMobile}
       />,
     ];
